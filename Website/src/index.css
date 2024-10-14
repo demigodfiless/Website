@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #ff5722; /* Vibrant orange for primary actions */
+  --secondary-color: #1e1e1e; /* Dark background */
+  --accent-color: #ffd54f; /* Soft yellow for accents */
+  --text-color: #ffffff; /* White text for contrast */
+  --link-color: #42a5f5; /* Soft blue for links */
+  --link-hover-color: #2196f3; /* Darker blue on hover */
+  --button-bg: #3f51b5; /* Indigo button background */
+  --button-hover-bg: #303f9f; /* Darker indigo on hover */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Allow more flexible layouts */
+  align-items: center;
+  justify-content: flex-start; /* Align items to the top */
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 2rem; /* Increased padding for a spacious feel */
+  background: linear-gradient(to bottom right, var(--secondary-color), #303030); /* Gradient for depth */
+}
+
+h1 {
+  font-size: 3.5em; /* Larger font size for main heading */
+  line-height: 1.1;
+  color: var(--accent-color); /* Soft yellow for headings */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+  margin-bottom: 1.5rem; /* Space below heading */
+}
+
+h2 {
+  font-size: 2.5em; /* Larger subheading for emphasis */
+  color: var(--text-color); /* Subheading color */
+  margin: 1.5rem 0; /* More space above and below */
+  text-align: center; /* Center subheadings */
+}
+
+a {
+  font-weight: 600; /* Bolder links for better visibility */
+  color: var(--link-color); /* Soft blue for links */
+  transition: color 0.3s ease, transform 0.2s; /* Smooth transition */
+}
+a:hover {
+  color: var(--link-hover-color); /* Darker blue on hover */
+  transform: translateY(-1px); /* Lift effect on hover */
+}
+
+.navbar {
+  width: 100%; /* Full width navbar */
+  background-color: rgba(30, 30, 30, 0.9); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blurring effect */
+  padding: 1rem 2rem; /* Increased padding for links */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.nav-link {
+  margin: 0 2rem; /* Increased spacing between links */
+  font-size: 1.2em; /* Larger font size for links */
+  color: var(--text-color); /* Link color */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+button {
+  border-radius: 12px; /* More rounded buttons */
+  border: 2px solid transparent; /* Solid border for focus */
+  padding: 0.75em 1.5em; /* Increased padding for a better feel */
+  font-size: 1.1em; /* Slightly larger font size */
+  font-weight: 600; /* Bolder font */
+  font-family: inherit;
+  background-color: var(--button-bg); /* Primary button color */
+  color: var(--text-color); /* Text color */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+button:hover {
+  background-color: var(--button-hover-bg); /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+input, select {
+  border-radius: 8px;
+  border: 2px solid #4b5563; /* Darker border for input */
+  padding: 0.75em; /* Increased padding for inputs */
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #3b3b3b; /* Input background */
+  color: var(--text-color); /* Input text color */
+  transition: border-color 0.3s; /* Smooth transition */
+  margin-bottom: 1.5rem; /* Space below inputs */
+}
+input:focus, select:focus {
+  border-color: var(--primary-color); /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+footer {
+  margin-top: auto; /* Push footer to the bottom */
+  padding: 1.5rem 0; /* Increased padding */
+  width: 100%; /* Full width */
+  text-align: center; /* Center text */
+  background-color: rgba(30, 30, 30, 0.9); /* Darker footer */
+  color: var(--text-color); /* Footer text color */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #f9f9f9; /* Light background */
+  }
+  a:hover {
+    color: #747bff; /* Light theme hover color */
+  }
+  button {
+    background-color: #ffffff; /* Light button color */
+  }
+  input, select {
+    background-color: #f0f0f0; /* Light input background */
+    color: #213547; /* Dark text for inputs */
+  }
+}
+.navbar {
+  position: sticky; /* Sticky navbar for better UX */
+  top: 0; /* Stick to the top */
+  z-index: 10; /* Ensure navbar stays on top */
+}
+
+.nav-link {
+  font-size: 1.1em; /* Slightly larger font for links */
+  color: var(--text-color); /* Text color */
+  padding: 0.5rem 1rem; /* Padding for better click area */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.nav-link:hover {
+  background-color: var(--primary-color); /* Background color on hover */
+  color: var(--text-color); /* Text color on hover */
+}
+.seller-page-container,
+.shopper-page-container,
+.admin-container {
+  padding: 2rem;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  color: #fff; /* Text color for better readability */
+}
+
+.page-title {
+  font-size: 2.5em;
+  color: #ffcc00; /* Bright color for titles */
+  margin-bottom: 1rem;
+}
+
+.product-form,
+.user-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.input-field,
+.role-select {
+  border-radius: 8px;
+  padding: 0.75em;
+  margin-bottom: 1rem;
+  border: 2px solid #4b5563;
+  background-color: #3b3b3b;
+  color: #ffffff;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus,
+.role-select:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.submit-button,
+.add-to-cart-button,
+.checkout-button,
+.delete-button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: #3b82f6; /* Primary button color */
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button:hover,
+.add-to-cart-button:hover,
+.checkout-button:hover,
+.delete-button:hover {
+  background-color: #2563eb; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+.product-item,
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.your-products-title {
+  margin-top: 1.5rem;
+  font-size: 1.5em; /* Title size for "Your Products" */
+}
+/* Add to your CSS file */
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: #007bff; /* Bootstrap primary color */
+  cursor: pointer;
+  font-size: 1rem; /* Adjust font size as needed */
+  text-decoration: underline;
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+.logout-button:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+/* Add to your CSS file */
+.confirmation-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Make sure it's on top */
+}
+
+.confirmation-modal h3 {
+  margin-bottom: 10px;
+}
+
+.confirmation-modal button {
+  margin-right: 10px;
+}
